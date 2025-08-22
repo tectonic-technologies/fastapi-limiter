@@ -52,7 +52,7 @@ class RateLimiter:
         key = f"{FastAPILimiter.prefix}:{rate_key}:{route_index}:{dep_index}"
         try:
             pexpire = await self._check(key)
-        except pyredis.exceptions.NoScriptError:
+        except (pyredis.exceptions.ResponseError, pyredis.exceptions.NoScriptError):
             FastAPILimiter.lua_sha = await FastAPILimiter.redis.script_load(
                 FastAPILimiter.lua_script
             )

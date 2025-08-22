@@ -7,12 +7,10 @@ include = ["CHANGELOG.md", "LICENSE", "README.md"]
 keywords = ["fastapi", "limiter"]
 license = "Apache2.0"
 name = "fastapi-limiter"
-packages = [
-    { include = "fastapi_limiter" },
-]
+packages = [{ include = "fastapi_limiter" }]
 readme = "README.md"
 repository = "https://github.com/long2ice/fastapi-limiter.git"
-version = "0.1.6"
+version = "0.1.7"
 
 [tool.poetry.dependencies]
 redis = ">=4.2.0rc1"
